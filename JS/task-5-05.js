@@ -75,7 +75,11 @@ class Car {
    * при условии что результирующая скорость не меньше нуля
    */
   decelerate(value) {
-    this._speed - value < 0 ? (this._speed = 0) : (this._speed -= value);
+    if (this._speed - value < 0) {
+      this._speed = 0;
+    } else {
+      this._speed -= value;
+    }
   }
 
   /*
